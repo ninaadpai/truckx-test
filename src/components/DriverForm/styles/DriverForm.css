@@ -1,0 +1,29 @@
+.driver-form-outer {
+    display: flex;
+    flex-direction: row;
+}
+
+.driver-form-input {
+    margin: 8px;
+    height: 20px;
+}
+
+.driver-form-button {
+    background: #70ca86;
+    color: #000;
+    font-size: 12px;
+    margin: 8px;
+    border: 1px solid #000;
+    height: 24px;
+    width: 40px;
+    outline: none !important;
+}
+
+.driver-form-button-disabled {
+    background: #ccc;
+    margin: 8px;
+    font-size: 12px;
+    border: 1px solid #000;
+    height: 24px;
+    width: 40px;
+}

@@ -1,28 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {Router, Route} from 'react-router-dom';
+import {createBrowserHistory} from 'history';
+import {Provider} from "react-redux";
+import Login from "./views/Login";
+import Dashboard from "./views/Dashboard";
+import store from "./store";
+import {SET_CURRENT_USER} from "./constants/types";
+import history from './history';
 import './App.css';
 
+if (localStorage.loginToken) {
+    store.dispatch({
+        type: SET_CURRENT_USER,
+        user: localStorage.getItem('user')
+    });
+    history.push("/dashboard");
+}
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+
+                <Router history={createBrowserHistory()}>
+
+                    <div>
+
+                        <Route exact path="/" component={Login}/>
+                        <Route exact path="/dashboard" component={Dashboard}/>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
 }
 
 export default App;

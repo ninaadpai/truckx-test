@@ -1,0 +1,33 @@
+.driver-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.driver-table {
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.table-element {
+    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.title {
+    color: red;
+    font-size: 14px;
+}
+
+.edit {
+    color: blue;
+}
+
+.delete {
+    color: red;
+}
